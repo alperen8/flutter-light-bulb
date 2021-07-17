@@ -2,20 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'lamp.dart';
 
-class LightSwitch extends StatefulWidget {
-  const LightSwitch({Key key}) : super(key: key);
+class LightSwitch extends StatelessWidget {
+  const LightSwitch(this.isLightOn, this.onPress, {Key key}) : super(key: key);
 
-  @override
-  _LightSwitchState createState() => _LightSwitchState();
-}
-
-class _LightSwitchState extends State<LightSwitch> {
-  bool isLightOn = false;
-  onPress() {
-    setState(() {
-      isLightOn = !isLightOn;
-    });
-  }
+  final bool isLightOn;
+  final Function onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +14,6 @@ class _LightSwitchState extends State<LightSwitch> {
       color: Colors.red,
       child: Column(
         children: [
-          Lamp(isLightOn),
           MaterialButton(
             onPressed: onPress,
             padding: EdgeInsets.all(5),

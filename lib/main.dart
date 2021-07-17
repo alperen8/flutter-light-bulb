@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:se380_hw1/Classroom.dart';
 import 'package:se380_hw1/LightSwitch.dart';
 import 'package:se380_hw1/lamp.dart';
 
@@ -31,7 +32,7 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [LightSwitch()],
+          children: [Classroom()],
         ),
       ),
     );
