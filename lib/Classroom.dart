@@ -10,6 +10,7 @@ class Classroom extends StatefulWidget {
 }
 
 class _ClassroomState extends State<Classroom> {
+  int colorCode = 1;
   bool isLightOn = false;
   onPress() {
     setState(() {
@@ -23,7 +24,31 @@ class _ClassroomState extends State<Classroom> {
       color: Colors.blue,
       padding: EdgeInsets.all(5),
       child: Column(
-        children: [Lamp(isLightOn), LightSwitch(isLightOn, onPress)],
+        children: [
+          Lamp(isLightOn, colorCode),
+          LightSwitch(isLightOn, onPress),
+          DropdownButton(
+              value: colorCode,
+              items: [
+                DropdownMenuItem(
+                  child: Text("green"),
+                  value: 1,
+                ),
+                DropdownMenuItem(
+                  child: Text("red"),
+                  value: 2,
+                ),
+                DropdownMenuItem(
+                  child: Text("blue"),
+                  value: 3,
+                )
+              ],
+              onChanged: (int value) {
+                setState(() {
+                  colorCode = value;
+                });
+              })
+        ],
       ),
     );
   }
