@@ -6,7 +6,7 @@ class Lamp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green,
+      color: isLit ? Colors.green : Colors.red,
       padding: EdgeInsets.all(5),
       child: Text(isLit ? "On" : "Off"),
     );
